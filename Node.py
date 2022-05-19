@@ -19,7 +19,7 @@ class Node:
             self.status.append(node.status[i])
         for i in range(len(node.prevPath)):
             self.prevPath.append(node.prevPath[i])
-        self.prevPath.append(node)
+        #self.prevPath.append(node)                         # to print transition 
 
     # Get value
 
@@ -70,16 +70,14 @@ class Node:
     # Printer
 
     def printNode(self):
-        # print("Current status:")
-        print(self.status)
-        # print("Current time:")
-        # print(self.time)
+        print(self.status, end = ", ")
 
     def printPrevPath(self):
         # self.prevPath.append(self)
         for i in range(len(self.prevPath)):
             print("Langkah ke-"+str(i+1)+":")
             self.prevPath[i].printNode()
+            print(self.prevPath[i].getTime())           # for each node time
         print(self.time)
         print("="*10)
 
